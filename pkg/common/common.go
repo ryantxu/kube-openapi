@@ -114,6 +114,9 @@ type Config struct {
 	// PostProcessSpec runs after the spec is ready to serve. It allows a final modification to the spec before serving.
 	PostProcessSpec func(*spec.Swagger) (*spec.Swagger, error)
 
+	// PostProcessSpec3 runs after the V3 spec is ready to serve. It allows a final modification to the spec before serving.
+	PostProcessSpec3 func(*spec3.OpenAPI) (*spec3.OpenAPI, error)
+
 	// SecurityDefinitions is list of all security definitions for OpenAPI service. If this is not nil, the user of config
 	// is responsible to provide DefaultSecurity and (maybe) add unauthorized response to CommonResponses.
 	SecurityDefinitions *spec.SecurityDefinitions
